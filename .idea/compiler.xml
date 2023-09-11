@@ -8,11 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="josipovic-2" />
         <module name="josipovic-1" />
+        <module name="josipovic-3" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="josipovic-1" target="19" />
-      <module name="josipovic-2" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>

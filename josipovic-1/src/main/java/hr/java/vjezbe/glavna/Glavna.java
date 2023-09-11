@@ -32,30 +32,38 @@ public class Glavna {
 
         profesori = unosProfesora(scanner);
         System.out.println("\n\n");
-        for (Profesor p: profesori) {System.out.println(p.toString());}
+        for (Profesor p : profesori) {
+            System.out.println(p.toString());
+        }
         System.out.println("\n\n");
 
         predmeti = unosPredmeta(scanner, profesori);
         System.out.println("\n\n");
-        for (Predmet p: predmeti) {System.out.println(p.toString());}
+        for (Predmet p : predmeti) {
+            System.out.println(p.toString());
+        }
         System.out.println("\n\n");
 
 
         studenti = unosStudenata(scanner);
         System.out.println("\n\n");
-        for (Student s: studenti) {System.out.println(s.toString());}
+        for (Student s : studenti) {
+            System.out.println(s.toString());
+        }
         System.out.println("\n\n");
 
 
-        ispiti = unosIspita(scanner,predmeti,studenti);
+        ispiti = unosIspita(scanner, predmeti, studenti);
         System.out.println("\n\n");
-        for (Ispit i: ispiti) {System.out.println(i.toString());}
+        for (Ispit i : ispiti) {
+            System.out.println(i.toString());
+        }
         System.out.println("\n\n");
 
 
         //getOdlikase
         for (Ispit i : ispiti) {
-            if(i.getOcjena() == 5){
+            if (i.getOcjena() == 5) {
                 System.out.println(
                         "Student " + i.getStudent().getIme() + " " +
                                 i.getStudent().getPrezime() + " je ostvario ocjenu 'izvrstan' na predmetu '" +
@@ -67,7 +75,7 @@ public class Glavna {
         scanner.close();
     }
 
-    static Profesor[] unosProfesora(Scanner scanner){
+    static Profesor[] unosProfesora(Scanner scanner) {
         Profesor[] profesori = new Profesor[brProf];
         for (int i = 0; i < profesori.length; i++) {
             System.out.println("Unesite " + (i + 1) + ". profesora: ");
@@ -88,7 +96,8 @@ public class Glavna {
         }
         return profesori;
     }
-    static Predmet[] unosPredmeta(Scanner scanner, Profesor[] profesori){
+
+    static Predmet[] unosPredmeta(Scanner scanner, Profesor[] profesori) {
         Predmet[] predmeti = new Predmet[brPred];
 
         for (int i = 0; i < predmeti.length; i++) {
@@ -100,13 +109,13 @@ public class Glavna {
             System.out.print("Unesite naziv predmeta: ");
             String naziv = scanner.nextLine();
 
-            System.out.print("Unesite broj ECTS bodova za predmet '" + naziv +"': " );
+            System.out.print("Unesite broj ECTS bodova za predmet '" + naziv + "': ");
             Integer brojEctsBodova = scanner.nextInt();
             scanner.nextLine();
 
             System.out.println("Odaberite profesora:");
             for (int j = 0; j < profesori.length; j++)
-                System.out.println((j+1) + ". " + profesori[j].getIme() + " " + profesori[j].getPrezime());
+                System.out.println((j + 1) + ". " + profesori[j].getIme() + " " + profesori[j].getPrezime());
 
             System.out.print("Odabir >> ");
             int odabir = scanner.nextInt();
@@ -116,12 +125,13 @@ public class Glavna {
             Integer brStudNaPredmetu = scanner.nextInt();
             scanner.nextLine();
 
-            predmeti[i] = new Predmet(sifra,naziv,brojEctsBodova,profesori[odabir - 1]);
+            predmeti[i] = new Predmet(sifra, naziv, brojEctsBodova, profesori[odabir - 1]);
         }
 
         return predmeti;
     }
-    static Student[] unosStudenata(Scanner scanner){
+
+    static Student[] unosStudenata(Scanner scanner) {
         Student[] studenti = new Student[brStud];
 
         for (int i = 0; i < studenti.length; i++) {
@@ -138,17 +148,18 @@ public class Glavna {
 
             String stringDatumRodjenja = scanner.nextLine();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy.");
-            LocalDate datumRodjenja = LocalDate.parse(stringDatumRodjenja,formatter);
+            LocalDate datumRodjenja = LocalDate.parse(stringDatumRodjenja, formatter);
 
             System.out.print("Unesite JMBAG studenta: ");
             String jmbag = scanner.nextLine();
 
-            studenti[i] = new Student(ime,prezime,jmbag,datumRodjenja);
+            studenti[i] = new Student(ime, prezime, jmbag, datumRodjenja);
         }
 
         return studenti;
     }
-    static Ispit[] unosIspita(Scanner scanner, Predmet[] predmeti, Student[] studenti){
+
+    static Ispit[] unosIspita(Scanner scanner, Predmet[] predmeti, Student[] studenti) {
         Ispit[] ispiti = new Ispit[brIspit];
 
         for (int i = 0; i < ispiti.length; i++) {
@@ -176,7 +187,7 @@ public class Glavna {
 
             String stringdatumIVrijeme = scanner.nextLine();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy.'T'HH:mm");
-            LocalDateTime datumIVrijeme = LocalDateTime.parse(stringdatumIVrijeme,formatter);
+            LocalDateTime datumIVrijeme = LocalDateTime.parse(stringdatumIVrijeme, formatter);
 
             ispiti[i] = new Ispit(predmeti[odabirPredmeta - 1], studenti[odabirStudenta - 1], ocjena, datumIVrijeme);
         }

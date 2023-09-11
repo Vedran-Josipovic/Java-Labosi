@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 
+//Labos - 3
 public class Glavna {
     private static final Integer brProf = 2;
     private static final Integer brPred = 2;

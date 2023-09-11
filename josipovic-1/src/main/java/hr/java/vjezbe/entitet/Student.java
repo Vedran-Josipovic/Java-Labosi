@@ -1,8 +1,9 @@
 package hr.java.vjezbe.entitet;
+
 import java.time.LocalDate;
 
 public class Student {
-    private String ime,prezime,jmbag;
+    private String ime, prezime, jmbag;
     private LocalDate datumRodjenja;
 
     public Student(String ime, String prezime, String jmbag, LocalDate datumRodjenja) {
