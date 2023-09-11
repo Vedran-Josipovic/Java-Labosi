@@ -1,19 +1,25 @@
 package hr.java.vjezbe.entitet;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public interface Visokoskolska {
     BigDecimal izracunajKonacnuOcjenuStudijaZaStudenta(Ispit[] studentoviIspiti, Integer zavrsniPismeni, Integer zavrsniObrana);
 
-
-    //Vraća prosječnu ocjenu na ispitima koji su položeni (S pozitivnom ocjenom)
-    default BigDecimal odrediProsjekOcjenaNaIspitima(Ispit[] ispitiStudenta) {
-        Ispit[] polozeniIspiti = filtrirajPolozeneIspite(ispitiStudenta);
-        Integer pom = 0;
-        for (Ispit i : polozeniIspiti) pom += i.getOcjena();
-        BigDecimal prosjek = new BigDecimal(pom / polozeniIspiti.length);
-        return prosjek;
+    /**
+     * Vraća prosječnu ocjenu na ispitima koji su položeni s pozitivnom ocjenom.
+     */
+    default BigDecimal odrediProsjekOcjenaNaIspitima(Ispit[] ispitiStudenta) throws ArithmeticException {
+        try {
+            Ispit[] polozeniIspiti = filtrirajPolozeneIspite(ispitiStudenta);
+            if(polozeniIspiti.length == 0)
+                throw new ArithmeticException("EXCEPTION: Niti jedan ispit nije položen.");
+            Integer pom = 0;
+            for (Ispit i : polozeniIspiti) pom += i.getOcjena();
+            return new BigDecimal((double)pom / polozeniIspiti.length);
+        } catch (ArithmeticException e) {
+            System.out.println(e);
+            return BigDecimal.ZERO;
+        }
     }
 
 

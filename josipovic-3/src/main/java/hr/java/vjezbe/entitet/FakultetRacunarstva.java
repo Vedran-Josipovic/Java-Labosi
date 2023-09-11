@@ -1,5 +1,6 @@
 package hr.java.vjezbe.entitet;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski {
     public FakultetRacunarstva(String nazivUstanove, Predmet[] predmeti, Student[] studenti, Ispit[] ispiti) {
@@ -60,6 +61,6 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
                 .multiply(odrediProsjekOcjenaNaIspitima(studentoviIspiti))
                 .add(BigDecimal.valueOf(diplomskiPismeni))
                 .add(BigDecimal.valueOf(diplomskiObrana))
-                .divide(BigDecimal.valueOf(5));
+                .divide(BigDecimal.valueOf(5), 2, RoundingMode.HALF_UP);
     }
 }

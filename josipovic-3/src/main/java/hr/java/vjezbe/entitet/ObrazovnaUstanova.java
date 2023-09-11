@@ -14,7 +14,7 @@ public abstract class ObrazovnaUstanova {
         this.ispiti = ispiti;
     }
 
-    public abstract Student odrediNajuspjesnijegStudentaNaGodini(Integer akademskaGodina);
+    public abstract Student odrediNajuspjesnijegStudentaNaGodini(Integer akademskaGod);
 
     public String getNazivUstanove() {
         return nazivUstanove;

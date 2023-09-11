@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Added Comments">
+    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Formatting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Ispit.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Ispit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Osoba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Predmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Predmet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Profesor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/glavna/Glavna.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/glavna/Glavna.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +82,8 @@
       <workItem from="1694413428207" duration="123000" />
       <workItem from="1694413563019" duration="31000" />
       <workItem from="1694413603686" duration="302000" />
-      <workItem from="1694414052152" duration="1764000" />
+      <workItem from="1694414052152" duration="1824000" />
+      <workItem from="1694437237994" duration="3493000" />
     </task>
     <task id="LOCAL−00001" summary="Added Comments">
       <created>1694414151521</created>
@@ -93,7 +91,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1694414151521</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Formatting">
+      <created>1694415862575</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1694415862575</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,7 +116,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Comments" />
+    <MESSAGE value="Formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
