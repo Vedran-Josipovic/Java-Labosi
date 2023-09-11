@@ -1,5 +1,4 @@
 package hr.java.vjezbe.entitet;
-
 import java.math.BigDecimal;
 
 public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski {

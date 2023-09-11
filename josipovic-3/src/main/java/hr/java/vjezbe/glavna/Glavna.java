@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 
-//Labos - 3 - test
+//Labos - 3 - test2
 public class Glavna {
     private static final Integer brProf = 2;
     private static final Integer brPred = 2;
@@ -21,7 +21,7 @@ public class Glavna {
 
     public static void main(String[] args) throws FileNotFoundException {
         //Scanner scanner = new Scanner(System.in);
-        File file = new File("josipovic-2/src/main/java/hr/java/vjezbe/files/currentInput");
+        File file = new File("josipovic-3/src/main/java/hr/java/vjezbe/files/currentInput");
         Scanner scanner = new Scanner(file);
 
         Profesor[] profesori;

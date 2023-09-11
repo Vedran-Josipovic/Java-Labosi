@@ -1,5 +1,4 @@
 package hr.java.vjezbe.entitet;
-
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -16,26 +15,14 @@ public class Student extends Osoba {
     public String getJmbag() {
         return jmbag;
     }
-
     public void setJmbag(String jmbag) {
         this.jmbag = jmbag;
     }
-
     public LocalDate getDatumRodjenja() {
         return datumRodjenja;
     }
-
     public void setDatumRodjenja(LocalDate datumRodjenja) {
         this.datumRodjenja = datumRodjenja;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{ " +
-                super.toString() + " " +
-                "jmbag='" + jmbag + '\'' +
-                ", datumRodjenja=" + datumRodjenja +
-                '}';
     }
 
     @Override
@@ -44,9 +31,16 @@ public class Student extends Osoba {
         if (!(o instanceof Student student)) return false;
         return getJmbag().equals(student.getJmbag());
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(getJmbag());
+    }
+    @Override
+    public String toString() {
+        return "Student{ " +
+                super.toString() + " " +
+                "jmbag='" + jmbag + '\'' +
+                ", datumRodjenja=" + datumRodjenja +
+                '}';
     }
 }

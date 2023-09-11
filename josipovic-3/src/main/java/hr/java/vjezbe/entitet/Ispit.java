@@ -1,5 +1,4 @@
 package hr.java.vjezbe.entitet;
-
 import java.time.LocalDateTime;
 
 public final class Ispit implements Online {
@@ -21,41 +20,39 @@ public final class Ispit implements Online {
     public Predmet getPredmet() {
         return predmet;
     }
-
     public void setPredmet(Predmet predmet) {
         this.predmet = predmet;
     }
-
     public Student getStudent() {
         return student;
     }
-
     public void setStudent(Student student) {
         this.student = student;
     }
-
     public Integer getOcjena() {
         return ocjena;
     }
-
     public void setOcjena(Integer ocjena) {
         this.ocjena = ocjena;
     }
-
     public LocalDateTime getDatumIVrijeme() {
         return datumIVrijeme;
     }
-
     public void setDatumIVrijeme(LocalDateTime datumIVrijeme) {
         this.datumIVrijeme = datumIVrijeme;
     }
-
     public Dvorana getDvorana() {
         return dvorana;
     }
-
     public void setDvorana(Dvorana dvorana) {
         this.dvorana = dvorana;
+    }
+    @Override
+    public void setNazivOnlineSoftvera(String nazivOnlineSoftvera) {
+        this.nazivOnlineSoftvera = nazivOnlineSoftvera;
+    }
+    public String getNazivOnlineSoftvera() {
+        return nazivOnlineSoftvera;
     }
 
     @Override
@@ -68,14 +65,5 @@ public final class Ispit implements Online {
                 ", dvorana=" + dvorana +
                 ", nazivOnlineSoftvera='" + nazivOnlineSoftvera + '\'' +
                 '}';
-    }
-
-    @Override
-    public void setNazivOnlineSoftvera(String nazivOnlineSoftvera) {
-        this.nazivOnlineSoftvera = nazivOnlineSoftvera;
-    }
-
-    public String getNazivOnlineSoftvera() {
-        return nazivOnlineSoftvera;
     }
 }

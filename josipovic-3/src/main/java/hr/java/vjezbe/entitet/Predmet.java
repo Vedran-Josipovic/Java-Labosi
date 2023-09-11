@@ -1,5 +1,4 @@
 package hr.java.vjezbe.entitet;
-
 import java.util.ArrayList;
 
 public class Predmet {
@@ -14,7 +13,6 @@ public class Predmet {
         this.brojEctsBodova = brojEctsBodova;
         this.nositelj = nositelj;
     }
-
     public Predmet(String sifra, String naziv, Integer brojEctsBodova, Profesor nositelj, ArrayList<Student> studenti) {
         this.sifra = sifra;
         this.naziv = naziv;
@@ -26,39 +24,30 @@ public class Predmet {
     public String getSifra() {
         return sifra;
     }
-
     public void setSifra(String sifra) {
         this.sifra = sifra;
     }
-
     public String getNaziv() {
         return naziv;
     }
-
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
-
     public Integer getBrojEctsBodova() {
         return brojEctsBodova;
     }
-
     public void setBrojEctsBodova(Integer brojEctsBodova) {
         this.brojEctsBodova = brojEctsBodova;
     }
-
     public Profesor getNositelj() {
         return nositelj;
     }
-
     public void setNositelj(Profesor nositelj) {
         this.nositelj = nositelj;
     }
-
     public ArrayList<Student> getStudenti() {
         return studenti;
     }
-
     public void setStudenti(ArrayList<Student> studenti) {
         this.studenti = studenti;
     }

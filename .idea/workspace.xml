@@ -4,36 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/josipovic-3/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LABOSI.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-1/josipovic-1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-1/src/main/java/hr/java/vjezbe/entitet/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-1/src/main/java/hr/java/vjezbe/entitet/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-1/src/main/java/hr/java/vjezbe/glavna/Glavna.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-1/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-1/target/classes/hr/java/vjezbe/entitet/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-1/target/classes/hr/java/vjezbe/entitet/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-1/target/classes/hr/java/vjezbe/glavna/Glavna.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-1/target/classes/hr/java/vjezbe/glavna/Glavna.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/josipovic-2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/Predmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/Predmet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/Profesor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/glavna/Glavna.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/ObrazovnaUstanova.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/ObrazovnaUstanova.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/Predmet.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/Predmet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/Profesor.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/Profesor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/glavna/Glavna.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-2/target/classes/hr/java/vjezbe/glavna/Glavna.class" afterDir="false" />
+    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Added Comments">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Ispit.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Ispit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Osoba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Predmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Predmet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,20 +39,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/Vedran/Desktop/Java - LABOSI/LABOSI - Git",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "gradle.compiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vedran/Desktop/Java - LABOSI/LABOSI - Git&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;gradle.compiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -105,7 +85,15 @@
       <workItem from="1694413428207" duration="123000" />
       <workItem from="1694413563019" duration="31000" />
       <workItem from="1694413603686" duration="302000" />
+      <workItem from="1694414052152" duration="1764000" />
     </task>
+    <task id="LOCAL−00001" summary="Added Comments">
+      <created>1694414151521</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1694414151521</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +109,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
