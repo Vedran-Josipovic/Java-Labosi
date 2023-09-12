@@ -22,28 +22,33 @@ public interface Visokoskolska {
         }
     }
 
-
-    //Prima sve ispite, vraća samo one koji su položeni s pozitivnom ocjenom
-    private Ispit[] filtrirajPolozeneIspite(Ispit[] sviIspitiStudenta) {
+    /**
+     * Prima polje ispita, vraća samo one koji su položeni s pozitivnom ocjenom.
+     */
+    private Ispit[] filtrirajPolozeneIspite(Ispit[] ispiti) {
         ArrayList<Ispit> polozeniIspiti = new ArrayList<>();
-        for (Ispit i : sviIspitiStudenta)
+        for (Ispit i : ispiti)
             if (i.getOcjena() > 1) polozeniIspiti.add(i);
         return polozeniIspiti.toArray(new Ispit[0]);
     }
 
-    //Prima sve ispite, vraća samo ispite kojima je pristupio student
-    default Ispit[] filtrirajIspitePoStudentu(Ispit[] sviIspiti, Student student) {
+    /**
+     * Prima polje ispita, vraća samo one kojima je pristupio student.
+     */
+    default Ispit[] filtrirajIspitePoStudentu(Ispit[] ispiti, Student student) {
         ArrayList<Ispit> pristupljeniIspiti = new ArrayList<>();
-        for (Ispit i : sviIspiti)
+        for (Ispit i : ispiti)
             if (i.getStudent().equals(student)) pristupljeniIspiti.add(i);
         return pristupljeniIspiti.toArray(new Ispit[0]);
     }
 
-    default Ispit[] filtrirajIspitePoGodini(Ispit[] sviIspiti, Integer akademskaGodina) {
+    /**
+     * Prima polje ispita, vraća samo one koji su održani zadane godine.
+     */
+    default Ispit[] filtrirajIspitePoGodini(Ispit[] ispiti, Integer akademskaGod) {
         ArrayList<Ispit> ispitiGodine = new ArrayList<>();
-        for (Ispit i : sviIspiti)
-            if (i.getDatumIVrijeme().getYear() == akademskaGodina) ispitiGodine.add(i);
+        for (Ispit i : ispiti)
+            if (i.getDatumIVrijeme().getYear() == akademskaGod) ispitiGodine.add(i);
         return ispitiGodine.toArray(new Ispit[0]);
     }
-
 }

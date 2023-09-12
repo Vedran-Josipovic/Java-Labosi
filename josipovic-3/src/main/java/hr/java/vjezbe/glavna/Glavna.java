@@ -1,7 +1,5 @@
 package hr.java.vjezbe.glavna;
-
 import hr.java.vjezbe.entitet.*;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
@@ -10,14 +8,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-
-//Labos - 3 - test2
+//Labos - 3
 public class Glavna {
-    private static final Integer brProf = 2;
-    private static final Integer brPred = 2;
-    private static final Integer brStud = 2;
-    private static final Integer brIspit = 2;
-    private static final Integer akadGod = 2022;
+    private static final Integer brProf = 2, brPred = 2, brStud = 2, brIspit = 2, akadGod = 2022;
 
     public static void main(String[] args) throws FileNotFoundException {
         //Scanner scanner = new Scanner(System.in);
@@ -29,59 +22,21 @@ public class Glavna {
         Student[] studenti;
         Ispit[] ispiti;
 
-
         System.out.println("Unesite broj obrazovnih ustanova: ");
-        Integer brObrazovnihUstanova = scanner.nextInt();
-        scanner.nextLine();
-
-        ObrazovnaUstanova[] obrazovneUstanove = new ObrazovnaUstanova[brObrazovnihUstanova];
+        Integer brObrUstanova = scanner.nextInt(); scanner.nextLine();
+        ObrazovnaUstanova[] obrazovneUstanove = new ObrazovnaUstanova[brObrUstanova];
 
         for (int j = 0; j < obrazovneUstanove.length; j++) {
             System.out.println("Unesite podatke za " + (j + 1) + ". obrazovnu ustanovu:");
-
             profesori = unosProfesora(scanner);
-            System.out.println("\n\n");
-            for (Profesor p : profesori) {
-                System.out.println(p.toString());
-            }
-            System.out.println("\n\n");
-
             predmeti = unosPredmeta(scanner, profesori);
-            System.out.println("\n\n");
-            for (Predmet p : predmeti) {
-                System.out.println(p.toString());
-            }
-            System.out.println("\n\n");
-
-
             studenti = unosStudenata(scanner);
-            System.out.println("\n\n");
-            for (Student s : studenti) {
-                System.out.println(s.toString());
-            }
-            System.out.println("\n\n");
-
-
             ispiti = unosIspita(scanner, predmeti, studenti);
-            System.out.println("\n\n");
-            for (Ispit i : ispiti) {
-                System.out.println(i.toString());
-            }
-            System.out.println("\n\n");
 
-
-            //getOdlikase
-            for (Ispit i : ispiti) {
-                if (i.getOcjena() == 5) {
-                    System.out.println("Student " + i.getStudent().getIme() + " " + i.getStudent().getPrezime() + " je ostvario ocjenu 'izvrstan' na predmetu '" + i.getPredmet().getNaziv() + "'");
-                }
-            }
-            //getOdlikase
+            printOdlikasi(ispiti);
 
             System.out.println("Odaberite obrazovnu ustanovu za navedene podatke koju želite unijeti (1 - Veleučilište Jave, 2 - Fakultet računarstva): ");
-            Integer odabirUstanove = scanner.nextInt();
-            scanner.nextLine();
-
+            Integer odabirUstanove = scanner.nextInt(); scanner.nextLine();
             System.out.println("Unesite naziv obrazovne ustanove: ");
             String nazivUstanove = scanner.nextLine();
 
@@ -183,6 +138,7 @@ public class Glavna {
             int odabir = scanner.nextInt();
             scanner.nextLine();
 
+            //WILL FIX HARDCODED JAVA LATER
             System.out.print("Unesite broj studenata za predmetu 'Programiranje u jeziku Java': ");
             Integer brStudNaPredmetu = scanner.nextInt();
             scanner.nextLine();
@@ -266,4 +222,29 @@ public class Glavna {
 
         return ispiti;
     }
+
+
+    /**
+     * Generic metoda koja printa sve elemente u polju.
+     */
+    public static <T> void printPolje(T[] items) {
+        System.out.println("\n\n");
+        for (T item : items) System.out.println(item.toString());
+        System.out.println("\n\n");
+    }
+
+
+    /**
+     * @param ispiti
+     * Printa ime i prezime studenata koji imaju 5 iz ispita.
+     */
+    static void printOdlikasi(Ispit[] ispiti){
+        for (Ispit i : ispiti){
+            if (i.getOcjena() == 5){
+                System.out.println("Student " + i.getStudent().getImePrezime()
+                + " je ostvario ocjenu 'izvrstan' na predmetu '" + i.getPredmet().getNaziv() + "'");
+            }
+        }
+    }
+
 }
