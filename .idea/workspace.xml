@@ -7,10 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Dodavanje iznimki i formatiranje.">
+    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Cleaning up code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Ispit.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Ispit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/ObrazovnaUstanova.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/ObrazovnaUstanova.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Osoba.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Osoba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Predmet.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Predmet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Profesor$ProfesorBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Profesor$ProfesorBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Profesor.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Profesor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/VeleucilisteJave.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/VeleucilisteJave.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/glavna/Glavna.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/glavna/Glavna.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +94,8 @@
       <workItem from="1694413603686" duration="302000" />
       <workItem from="1694414052152" duration="1824000" />
       <workItem from="1694437237994" duration="3609000" />
-      <workItem from="1694514706555" duration="4436000" />
+      <workItem from="1694514706555" duration="4578000" />
+      <workItem from="1694532174261" duration="1873000" />
     </task>
     <task id="LOCAL−00001" summary="Added Comments">
       <created>1694414151521</created>
@@ -104,7 +115,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1694441668565</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Cleaning up code.">
+      <created>1694520143675</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1694520143675</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +142,8 @@
     <MESSAGE value="Added Comments" />
     <MESSAGE value="Formatting" />
     <MESSAGE value="Dodavanje iznimki i formatiranje." />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodavanje iznimki i formatiranje." />
+    <MESSAGE value="Cleaning up code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaning up code." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
