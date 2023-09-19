@@ -1,18 +1,25 @@
 package hr.java.vjezbe.glavna;
 import hr.java.vjezbe.entitet.*;
+import hr.java.vjezbe.iznimke.NeispravanOdabirException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //Labos - 3
 public class Glavna {
-    private static final Integer brProf = 2, brPred = 2, brStud = 2, brIspit = 2, akadGod = 2022;
-
+    private static final Logger logger = LoggerFactory.getLogger(Glavna.class);
+    private static final Integer brProf = 2, brPred = 2, brStud = 2, brIspit = 2, akadGod = 2022, brUstanova = 2;
     public static void main(String[] args) throws FileNotFoundException {
+        logger.info("Aplikacija pokrenuta");
+
         //Scanner scanner = new Scanner(System.in);
         File file = new File("josipovic-3/src/main/java/hr/java/vjezbe/files/currentInput");
         Scanner scanner = new Scanner(file);
@@ -22,8 +29,8 @@ public class Glavna {
         Student[] studenti;
         Ispit[] ispiti;
 
-        System.out.println("Unesite broj obrazovnih ustanova: ");
-        int brObrUstanova = scanner.nextInt(); scanner.nextLine();
+        int brObrUstanova = inputErrorHandle(scanner, "Unesite broj obrazovnih ustanova: ", 1, Integer.MAX_VALUE);
+
         ObrazovnaUstanova[] obrazovneUstanove = new ObrazovnaUstanova[brObrUstanova];
 
         for (int j = 0; j < obrazovneUstanove.length; j++) {
@@ -36,10 +43,9 @@ public class Glavna {
 
             printOdlikasi(ispiti);
 
+            int odabirUstanove = inputErrorHandle(scanner, "Odaberite obrazovnu ustanovu za navedene podatke koju želite unijeti (1 - Veleučilište Jave, 2 - Fakultet računarstva): ",
+                    1 ,brObrUstanova);
 
-            //Exception
-            System.out.println("Odaberite obrazovnu ustanovu za navedene podatke koju želite unijeti (1 - Veleučilište Jave, 2 - Fakultet računarstva): ");
-            int odabirUstanove = scanner.nextInt(); scanner.nextLine();
             System.out.println("Unesite naziv obrazovne ustanove: ");
             String nazivUstanove = scanner.nextLine();
 
@@ -49,27 +55,23 @@ public class Glavna {
             else if (odabirUstanove == 2) {
                 obrazovneUstanove[j] = new FakultetRacunarstva(nazivUstanove, predmeti, studenti, ispiti);
             }
-            //To be handeled with exceptions
+            //Handlao sam s iznimkama. Mislim da mogu izbaciti
             else {
-                System.out.println("GREŠKA - Neispravan unos\n");
+                System.out.println("Neočekivana greška - Programer je kriv. ABORT");
                 return;
             }
-            //Exception
 
 
             //Konačna ocjena, najbolji student, rektorova nagrada - Staviti u funkciju kasnije
             for (Student s : obrazovneUstanove[j].getStudenti()) {
-                System.out.println("Unesite ocjenu završnog rada za studenta: " + s.getImePrezime() + ": ");
-                Integer zavrsniPismeni = scanner.nextInt(); scanner.nextLine();
-
-                System.out.println("Unesite ocjenu obrane završnog rada za studenta: " + s.getImePrezime() + ": ");
-                Integer zavrsniObrana = scanner.nextInt(); scanner.nextLine();
+                Integer zavrsniPismeni = inputErrorHandle(scanner, "Unesite ocjenu završnog rada za studenta: " + s.getImePrezime() + ": ",1 ,5);
+                Integer zavrsniObrana = inputErrorHandle(scanner, "Unesite ocjenu obrane završnog rada za studenta: " + s.getImePrezime() + ": ",1 ,5);
 
                 if (obrazovneUstanove[j] instanceof Visokoskolska visokoskolska) {
                     //Ovo bi bilo idealno staviti u metodu koja handla ispite
                     Ispit[] studentoviIspiti = visokoskolska.filtrirajIspitePoStudentu(obrazovneUstanove[j].getIspiti(), s);
                     BigDecimal konacnaOcjena = visokoskolska.izracunajKonacnuOcjenuStudijaZaStudenta(studentoviIspiti, zavrsniPismeni, zavrsniObrana);
-                    System.out.println("Konačna ocjena studija studenta " + s.getIme() + " " + s.getPrezime() + " je " + konacnaOcjena);
+                    System.out.println("Konačna ocjena studija studenta " + s.getImePrezime() + " je " + konacnaOcjena);
                 }
             }
 
@@ -84,7 +86,63 @@ public class Glavna {
             //Konačna ocjena, najbolji student, rektorova nagrada
         }
         scanner.close();
+        logger.info("Aplikacija završila s radom");
     }
+
+    private static int inputErrorHandle(Scanner scanner, String message) {
+        int brObjekata = 0;
+        Boolean badFormat;
+        do {
+            try {
+                System.out.print(message);
+                brObjekata = scanner.nextInt();
+                badFormat = false;
+            } catch (InputMismatchException e) {
+                logger.error("Unesen string umjesto broja " + e);
+                System.out.println("Neispravan unos!");
+                badFormat = true;
+            } finally {
+                scanner.nextLine();
+            }
+        } while (badFormat);
+        return brObjekata;
+    }
+
+
+    private static int inputErrorHandle(Scanner scanner, String message, int minVrijednost, int maxVrijednost){
+        int redniBrObjekata = 0;
+        Boolean badFormat;
+        do {
+            try {
+                System.out.print(message);
+                redniBrObjekata = scanner.nextInt();
+                provjera(redniBrObjekata, minVrijednost, maxVrijednost);
+                badFormat = false;
+            } catch (InputMismatchException e) {
+                logger.error("Unesen string umjesto broja " + e);
+                System.out.println("Neispravan unos!");
+                badFormat = true;
+            }
+            catch (NeispravanOdabirException e){
+                logger.error(e.getMessage() + e);
+                System.out.println("Unijeli ste nedozvoljen broj.");
+                badFormat = true;
+            }
+            finally {
+                scanner.nextLine();
+            }
+        } while (badFormat);
+        return redniBrObjekata;
+    }
+
+    //Smislenije nazvati sve ove nove funkcije
+    private static void provjera(int redniBrObjekata, int minVrijednost, int maxVrijednost){
+        if (redniBrObjekata < minVrijednost || redniBrObjekata > maxVrijednost){
+            throw new NeispravanOdabirException("Unesen nedozvoljen broj ");
+        }
+    }
+
+
 
     static Profesor[] unosProfesora(Scanner scanner) {
         Profesor[] profesori = new Profesor[brProf];
@@ -119,19 +177,14 @@ public class Glavna {
             System.out.print("Unesite naziv predmeta: ");
             String naziv = scanner.nextLine();
 
-            System.out.print("Unesite broj ECTS bodova za predmet '" + naziv + "': ");
-            Integer brojEctsBodova = scanner.nextInt(); scanner.nextLine();
+            Integer brojEctsBodova = inputErrorHandle(scanner, "Unesite broj ECTS bodova za predmet '" + naziv + "': ", 0,35);
 
             System.out.println("Odaberite profesora:");
             for (int j = 0; j < profesori.length; j++)
                 System.out.println((j + 1) + ". " + profesori[j].getImePrezime());
 
-            System.out.print("Odabir >> ");
-            int odabir = scanner.nextInt(); scanner.nextLine();
-
-            System.out.print("Unesite broj studenata za predmetu '" + naziv + "': ");
-            Integer brStudNaPredmetu = scanner.nextInt(); scanner.nextLine();
-
+            int odabir = inputErrorHandle(scanner, "Odabir >> ", 1, profesori.length);
+            Integer brStudNaPredmetu = inputErrorHandle(scanner,"Unesite broj studenata za predmetu '" + naziv + "': ", 1, Integer.MAX_VALUE);
             predmeti[i] = new Predmet(sifra, naziv, brojEctsBodova, profesori[odabir - 1]);
         }
         return predmeti;
@@ -171,8 +224,10 @@ public class Glavna {
             System.out.println("Odaberite predmet: ");
             for (int j = 0; j < predmeti.length; j++)
                 System.out.println((j + 1) + ". " + predmeti[j].getNaziv());
-            System.out.print("Odabir >> ");
-            int odabirPredmeta = scanner.nextInt(); scanner.nextLine();
+
+            //LAB-3-ZAD-3
+            int odabirPredmeta = inputErrorHandle(scanner,"Odabir >> ", 1, predmeti.length);
+            //LAB-3-ZAD-3
 
             System.out.println("Unesite naziv dvorane: ");
             String nazivDvorane = scanner.nextLine();
@@ -185,11 +240,9 @@ public class Glavna {
             System.out.println("Odaberite studenta: ");
             for (int j = 0; j < studenti.length; j++)
                 System.out.println((j + 1) + ". " + studenti[j].getImePrezime());
-            System.out.print("Odabir >> ");
-            int odabirStudenta = scanner.nextInt(); scanner.nextLine();
 
-            System.out.print("Unesite ocjenu na ispitu (1-5): ");
-            Integer ocjena = scanner.nextInt(); scanner.nextLine();
+            int odabirStudenta = inputErrorHandle(scanner, "Odabir >> ", 1, studenti.length);
+            Integer ocjena = inputErrorHandle(scanner, "Unesite ocjenu na ispitu (1-5): ", 1, 5);
 
             System.out.print("Unesite datum i vrijeme ispita u formatu (dd.MM.yyyy.THH:mm): ");
             String stringDatumIVrijeme = scanner.nextLine();

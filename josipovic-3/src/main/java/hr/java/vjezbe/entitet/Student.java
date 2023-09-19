@@ -1,4 +1,5 @@
 package hr.java.vjezbe.entitet;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
