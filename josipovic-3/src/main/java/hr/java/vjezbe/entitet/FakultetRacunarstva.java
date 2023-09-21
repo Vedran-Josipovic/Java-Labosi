@@ -7,9 +7,18 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * Visokoškolska obrazovna ustanova koja nudi diplomski studij.
+ */
 public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski {
     private static final Logger logger = LoggerFactory.getLogger(FakultetRacunarstva.class);
 
+    /**
+     * @param nazivUstanove Ime fakulteta
+     * @param predmeti Predmeti koje fakultet nudi
+     * @param studenti Studenti koji pohađaju fakultet
+     * @param ispiti Ispiti koji su se održali na fakultetu
+     */
     public FakultetRacunarstva(String nazivUstanove, Predmet[] predmeti, Student[] studenti, Ispit[] ispiti) {
         super(nazivUstanove, predmeti, studenti, ispiti);
     }
@@ -17,13 +26,15 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
     /**
      * Vraća studenta koji ima najviše ispita ocijenjenih ocjenom 5.
      * Ako takvih studenata ima više, prednost ima student s većim indeksom unutar polja studenata.
+     *
+     * @param akademskaGod Akademska godina u kojoj tražimo najboljeg studenta
+     * @return Student koji ima najviše ispita ocijenjenih ocjenom 5 te akademske godine
      */
     @Override
     public Student odrediNajuspjesnijegStudentaNaGodini(Integer akademskaGod) {
         Student bestStudent = getStudenti()[0];
         int maxBrPetica = 0;
         Ispit[] ispitiGodine = filtrirajIspitePoGodini(getIspiti(), akademskaGod);
-
         for (Student s : getStudenti()) {
             int brPetica = 0;
             Ispit[] studentoviIspiti = filtrirajIspitePoStudentu(ispitiGodine, s);
@@ -36,8 +47,12 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
         return bestStudent;
     }
 
+
     /**
-     * Vraća studenta s najvišim prosjekom. Ako takvih studenata ima više, prednost ima najmlađi.
+     * Vraća studenta s najvišim prosjekom. Ako takvih studenata ima više, prednost ima najmlađi. (DORADITI)
+     *
+     * @return
+     * @throws PostojiViseNajmladjihStudenataException
      */
     @Override
     public Student odrediStudentaZaRektorovuNagradu() throws PostojiViseNajmladjihStudenataException {
