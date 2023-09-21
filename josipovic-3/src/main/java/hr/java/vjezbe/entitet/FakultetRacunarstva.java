@@ -1,8 +1,15 @@
 package hr.java.vjezbe.entitet;
+import hr.java.vjezbe.iznimke.NemoguceOdreditiProsjekStudentaException;
+import hr.java.vjezbe.iznimke.PostojiViseNajmladjihStudenataException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski {
+    private static final Logger logger = LoggerFactory.getLogger(FakultetRacunarstva.class);
+
     public FakultetRacunarstva(String nazivUstanove, Predmet[] predmeti, Student[] studenti, Ispit[] ispiti) {
         super(nazivUstanove, predmeti, studenti, ispiti);
     }
@@ -33,13 +40,23 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
      * Vraća studenta s najvišim prosjekom. Ako takvih studenata ima više, prednost ima najmlađi.
      */
     @Override
-    public Student odrediStudentaZaRektorovuNagradu() {
+    public Student odrediStudentaZaRektorovuNagradu() throws PostojiViseNajmladjihStudenataException {
         BigDecimal maxProsjek = new BigDecimal(0);
         Student bestStudent = getStudenti()[0];
 
         for (Student s : getStudenti()) {
             Ispit[] studentoviIspiti = filtrirajIspitePoStudentu(getIspiti(), s);
-            BigDecimal prosjek = odrediProsjekOcjenaNaIspitima(studentoviIspiti);
+
+            BigDecimal prosjek;
+            try {
+                prosjek = odrediProsjekOcjenaNaIspitima(studentoviIspiti);
+            } catch (NemoguceOdreditiProsjekStudentaException e) {
+                logger.warn("[FakultetRacunarstva.odrediStudentaZaRektorovuNagradu] Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!" + e);
+                System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
+                prosjek = BigDecimal.ONE;
+            }
+
+
             if (prosjek.compareTo(maxProsjek) > 0) {
                 maxProsjek = prosjek;
                 bestStudent = s;
@@ -47,6 +64,9 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
             else if (prosjek.compareTo(maxProsjek) == 0 && s.getDatumRodjenja().isBefore(bestStudent.getDatumRodjenja())) {
                 maxProsjek = prosjek;
                 bestStudent = s;
+            }
+            else if (prosjek.compareTo(maxProsjek) == 0 && s.getDatumRodjenja().isEqual(bestStudent.getDatumRodjenja())) {
+                throw new PostojiViseNajmladjihStudenataException(bestStudent.getImePrezime() + " i " + s.getImePrezime());
             }
         }
         return bestStudent;
@@ -57,10 +77,17 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
      */
     @Override
     public BigDecimal izracunajKonacnuOcjenuStudijaZaStudenta(Ispit[] studentoviIspiti, Integer diplomskiPismeni, Integer diplomskiObrana) {
-        return BigDecimal.valueOf(3)
-                .multiply(odrediProsjekOcjenaNaIspitima(studentoviIspiti))
-                .add(BigDecimal.valueOf(diplomskiPismeni))
-                .add(BigDecimal.valueOf(diplomskiObrana))
-                .divide(BigDecimal.valueOf(5), 2, RoundingMode.HALF_UP);
+        try {
+            return BigDecimal.valueOf(3)
+                    .multiply(odrediProsjekOcjenaNaIspitima(studentoviIspiti))
+                    .add(BigDecimal.valueOf(diplomskiPismeni))
+                    .add(BigDecimal.valueOf(diplomskiObrana))
+                    .divide(BigDecimal.valueOf(5), 2, RoundingMode.HALF_UP);
+        } catch (NemoguceOdreditiProsjekStudentaException e) {
+            Student s = studentoviIspiti[0].getStudent();
+            logger.warn("[FakultetRacunarstva.izracunajKonacnuOcjenuStudijaZaStudenta] Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!" + e);
+            System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
+            return BigDecimal.ONE;
+        }
     }
 }

@@ -2,10 +2,16 @@
 2023-09-19 12:01:27,718 ERROR [main] h.j.v.g.Glavna [Glavna.java:116] Unesen string umjesto brojajava.util.InputMismatchException
 2023-09-19 12:05:02,539 ERROR [main] h.j.v.g.Glavna [Glavna.java:137] Unesen string umjesto brojajava.util.InputMismatchException
 2023-09-19 12:05:20,879 ERROR [main] h.j.v.g.Glavna [Glavna.java:137] Unesen string umjesto brojajava.util.InputMismatchException
-2023-09-19 12:05:41,310 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanOdabirException: Unesen nedozvoljen broj 
-2023-09-19 12:07:49,068 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanOdabirException: Unesen nedozvoljen broj 
-2023-09-19 12:07:53,044 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanOdabirException: Unesen nedozvoljen broj 
-2023-09-19 12:07:54,804 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanOdabirException: Unesen nedozvoljen broj 
-2023-09-19 12:07:56,796 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanOdabirException: Unesen nedozvoljen broj 
+2023-09-19 12:05:41,310 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanIntUnosException: Unesen nedozvoljen broj
+2023-09-19 12:07:49,068 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanIntUnosException: Unesen nedozvoljen broj
+2023-09-19 12:07:53,044 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanIntUnosException: Unesen nedozvoljen broj
+2023-09-19 12:07:54,804 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanIntUnosException: Unesen nedozvoljen broj
+2023-09-19 12:07:56,796 ERROR [main] h.j.v.g.Glavna [Glavna.java:142] Unesen nedozvoljen broj hr.java.vjezbe.iznimke.NeispravanIntUnosException: Unesen nedozvoljen broj
 2023-09-19 12:38:56,443 INFO [main] h.j.v.g.Glavna [Glavna.java:21] Aplikacija pokrenuta
 2023-09-19 12:38:56,479 INFO [main] h.j.v.g.Glavna [Glavna.java:106] Aplikacija završila s radom
+2023-09-19 12:58:17,841 INFO [main] h.j.v.g.Glavna [Glavna.java:21] Aplikacija pokrenuta
+2023-09-19 12:58:17,891 INFO [main] h.j.v.g.Glavna [Glavna.java:89] Aplikacija završila s radom
+2023-09-20 11:58:24,461 INFO [main] h.j.v.g.Glavna [Glavna.java:21] Aplikacija pokrenuta
+2023-09-20 11:58:24,523 INFO [main] h.j.v.g.Glavna [Glavna.java:89] Aplikacija završila s radom
+2023-09-20 12:37:05,288 INFO [main] h.j.v.g.Glavna [Glavna.java:21] Aplikacija pokrenuta
+2023-09-20 12:37:05,331 INFO [main] h.j.v.g.Glavna [Glavna.java:88] Aplikacija završila s radom
