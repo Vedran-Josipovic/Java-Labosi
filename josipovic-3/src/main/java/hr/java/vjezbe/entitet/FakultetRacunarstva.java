@@ -16,19 +16,19 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
 
     /**
      * Vraća studenta koji ima najviše ispita ocijenjenih ocjenom 5.
-     * Ako takvih studenata ima više, prednost ima student s manjim indeksom unutar polja studenata.
+     * Ako takvih studenata ima više, prednost ima student s većim indeksom unutar polja studenata.
      */
     @Override
     public Student odrediNajuspjesnijegStudentaNaGodini(Integer akademskaGod) {
         Student bestStudent = getStudenti()[0];
-        Integer maxBrPetica = 0;
+        int maxBrPetica = 0;
         Ispit[] ispitiGodine = filtrirajIspitePoGodini(getIspiti(), akademskaGod);
 
         for (Student s : getStudenti()) {
-            Integer brPetica = 0;
+            int brPetica = 0;
             Ispit[] studentoviIspiti = filtrirajIspitePoStudentu(ispitiGodine, s);
             for (Ispit i : studentoviIspiti) if (i.getOcjena() == 5) brPetica++;
-            if (brPetica > maxBrPetica) {
+            if (brPetica >= maxBrPetica) {
                 maxBrPetica = brPetica;
                 bestStudent = s;
             }
@@ -51,8 +51,8 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
             try {
                 prosjek = odrediProsjekOcjenaNaIspitima(studentoviIspiti);
             } catch (NemoguceOdreditiProsjekStudentaException e) {
-                logger.warn("[FakultetRacunarstva.odrediStudentaZaRektorovuNagradu] Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!" + e);
-                System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
+                logger.warn("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“! " + e);
+                //System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
                 prosjek = BigDecimal.ONE;
             }
 
@@ -85,7 +85,7 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
                     .divide(BigDecimal.valueOf(5), 2, RoundingMode.HALF_UP);
         } catch (NemoguceOdreditiProsjekStudentaException e) {
             Student s = studentoviIspiti[0].getStudent();
-            logger.warn("[FakultetRacunarstva.izracunajKonacnuOcjenuStudijaZaStudenta] Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!" + e);
+            logger.warn("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“! " + e);
             System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
             return BigDecimal.ONE;
         }

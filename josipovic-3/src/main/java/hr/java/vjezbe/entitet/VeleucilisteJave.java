@@ -28,7 +28,7 @@ public class VeleucilisteJave extends ObrazovnaUstanova implements Visokoskolska
             try {
                 prosjek = odrediProsjekOcjenaNaIspitima(studentoviIspiti);
             } catch (NemoguceOdreditiProsjekStudentaException e) {
-                logger.warn("[VeleucilisteJave.odrediNajuspjesnijegStudentaNaGodini] Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!" + e);
+                logger.warn("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“! " + e);
                 System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
                 prosjek = BigDecimal.ONE;
             }
@@ -53,7 +53,7 @@ public class VeleucilisteJave extends ObrazovnaUstanova implements Visokoskolska
                     .divide(BigDecimal.valueOf(4), 2, RoundingMode.HALF_UP);
         } catch (NemoguceOdreditiProsjekStudentaException e) {
             Student s = studentoviIspiti[0].getStudent();
-            logger.warn("[VeleucilisteJave.izracunajKonacnuOcjenuStudijaZaStudenta] Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!" + e);
+            logger.warn("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“! " + e);
             System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
             return BigDecimal.ONE;
         }

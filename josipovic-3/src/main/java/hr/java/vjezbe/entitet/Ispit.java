@@ -17,6 +17,13 @@ public final class Ispit implements Online {
         this.dvorana = dvorana;
     }
 
+    public Ispit(Predmet predmet, Student student, Integer ocjena, LocalDateTime datumIVrijeme) {
+        this.predmet = predmet;
+        this.student = student;
+        this.ocjena = ocjena;
+        this.datumIVrijeme = datumIVrijeme;
+    }
+
     public Predmet getPredmet() {
         return predmet;
     }

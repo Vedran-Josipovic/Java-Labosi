@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -47,7 +48,7 @@ public class Glavna {
             int odabirUstanove = intUnosIznimkeHandler(scanner, "Odaberite obrazovnu ustanovu za navedene podatke koju želite unijeti (1 - Veleučilište Jave, 2 - Fakultet računarstva): ",
                 1 ,2);
 
-            System.out.println("Unesite naziv obrazovne ustanove: ");
+            System.out.print("Unesite naziv obrazovne ustanove: ");
             String nazivUstanove = scanner.nextLine();
 
             if (odabirUstanove == 1) {
@@ -63,12 +64,8 @@ public class Glavna {
                 return;
             }
 
+            ArrayList<Student> nePolazuZavrsni = new ArrayList<>();
             for (Student s : obrazovneUstanove[i].getStudenti()) {
-
-
-
-
-
                 if (obrazovneUstanove[i] instanceof Visokoskolska visokoskolska) {
                     Ispit[] studentoviIspiti = visokoskolska.filtrirajIspitePoStudentu(obrazovneUstanove[i].getIspiti(), s);
                     try {
@@ -78,10 +75,13 @@ public class Glavna {
                         BigDecimal konacnaOcjena = visokoskolska.izracunajKonacnuOcjenuStudijaZaStudenta(studentoviIspiti, zavrsniPismeni, zavrsniObrana);
                         System.out.println("Konačna ocjena studija studenta " + s.getImePrezime() + " je " + konacnaOcjena);
                     } catch (NemoguceOdreditiProsjekStudentaException e) {
-                        logger.warn("[Glavna] Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ne može polagati završni rad!" + e);
-                        System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
+                        logger.warn("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ne može polagati završni rad! " + e);
+                        nePolazuZavrsni.add(s);
                     }
                 }
+            }
+            for (Student s : nePolazuZavrsni) {
+                System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
             }
 
             Student bestStudent = obrazovneUstanove[i].odrediNajuspjesnijegStudentaNaGodini(akadGod);
@@ -93,7 +93,8 @@ public class Glavna {
                     rektorovaNagrada = diplomski.odrediStudentaZaRektorovuNagradu();
                 }
                 catch (PostojiViseNajmladjihStudenataException e){
-                    logger.error("Pronađeno je više najmlađih studenata: " + e.getMessage());
+                    logger.error("Pronađeno je više najmlađih studenata (PREKID PROGRAMA) " + e);
+                    System.out.println("Program završava s izvođenjem.");
                     System.out.println("Pronađeno je više najmlađih studenata s istim datumom rođenja, a to su "
                     + e.getMessage() + ".");
                     return;
@@ -219,17 +220,16 @@ public class Glavna {
             for (int j = 0; j < predmeti.length; j++)
                 System.out.println((j + 1) + ". " + predmeti[j].getNaziv());
 
-            //LAB-3-ZAD-3
             int odabirPredmeta = intUnosIznimkeHandler(scanner,"Odabir >> ", 1, predmeti.length);
-            //LAB-3-ZAD-3
 
+            /*
             System.out.println("Unesite naziv dvorane: ");
             String nazivDvorane = scanner.nextLine();
 
             System.out.println("Unesite zgradu dvorane: ");
             String zgradaDvorane = scanner.nextLine();
 
-            Dvorana dvorana = new Dvorana(nazivDvorane, zgradaDvorane);
+            Dvorana dvorana = new Dvorana(nazivDvorane, zgradaDvorane);*/
 
             System.out.println("Odaberite studenta: ");
             for (int j = 0; j < studenti.length; j++)
@@ -243,7 +243,8 @@ public class Glavna {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy.'T'HH:mm");
             LocalDateTime datumIVrijeme = LocalDateTime.parse(stringDatumIVrijeme, formatter);
 
-            ispiti[i] = new Ispit(predmeti[odabirPredmeta - 1], studenti[odabirStudenta - 1], ocjena, datumIVrijeme, dvorana);
+            //ispiti[i] = new Ispit(predmeti[odabirPredmeta - 1], studenti[odabirStudenta - 1], ocjena, datumIVrijeme, dvorana);
+            ispiti[i] = new Ispit(predmeti[odabirPredmeta - 1], studenti[odabirStudenta - 1], ocjena, datumIVrijeme);
 
             //Objekte klase „Student“ koji su pristupili ispitima iz određeniH predmeta treba dodati u polje studenata za taj određeni predmet
             predmeti[odabirPredmeta - 1].addStudent(studenti[odabirStudenta - 1]);

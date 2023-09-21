@@ -8,16 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Exception handling and error logging.">
-      <change afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/NemoguceOdreditiProsjekStudentaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/PostojiViseNajmladjihStudenataException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/logs/pogreske.log" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/logs/pogreske.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Diplomski.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Diplomski.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Ispit.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Ispit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/files/currentInput" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/files/currentInput" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/files/input" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/files/input" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/NeispravanOdabirException.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/NeispravanIntUnosException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/VeleucilisteJave.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/VeleucilisteJave.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" afterDir="false" />
@@ -107,7 +107,7 @@
       <workItem from="1695101765354" duration="12680000" />
       <workItem from="1695121072676" duration="157000" />
       <workItem from="1695203873061" duration="3517000" />
-      <workItem from="1695278793349" duration="12150000" />
+      <workItem from="1695278793349" duration="20591000" />
     </task>
     <task id="LOCAL−00001" summary="Added Comments">
       <created>1694414151521</created>
@@ -145,7 +145,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1695120567399</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Exception handling and error logging.">
+      <created>1695308414552</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1695308414552</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

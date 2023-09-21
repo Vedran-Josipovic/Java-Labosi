@@ -15,7 +15,7 @@ public interface Visokoskolska {
      * Nova, promijenjena radi zadatka 5 labosa 3
      */
     default BigDecimal odrediProsjekOcjenaNaIspitima(Ispit[] ispitiStudenta) throws NemoguceOdreditiProsjekStudentaException {
-        Integer pom = 0;
+        int pom = 0;
         for (var i : ispitiStudenta) {
             if (i.getOcjena() == 1) throw new NemoguceOdreditiProsjekStudentaException("Polje ispita sadrži ispit sa ocjenom '1'");
             pom += i.getOcjena();
@@ -37,7 +37,7 @@ public interface Visokoskolska {
             for (Ispit i : polozeniIspiti) pom += i.getOcjena();
             return new BigDecimal((double)pom / polozeniIspiti.length);
         } catch (ArithmeticException e) {
-            logger.warn("[Visokoskolska.odrediProsjekOcjenaNaIspitimaDepreciated]" +  e.getMessage());
+            logger.warn(e.getMessage());
             return BigDecimal.ZERO;
         }
     }
