@@ -7,20 +7,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Added Javadoc and dateTime format input exceptions.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Started Lab-4">
+      <change afterPath="$PROJECT_DIR$/josipovic-4/logs/pogreske.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Diplomski.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Dvorana.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Ispit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Online.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Osoba.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Predmet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Profesor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/files/currentInput" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/files/input" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/iznimke/NeispravanIntUnosException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/iznimke/NemoguceOdreditiProsjekStudentaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/iznimke/PostojiViseNajmladjihStudenataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Diplomski.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Dvorana.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Ispit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/ObrazovnaUstanova.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Online.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Osoba.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Predmet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Profesor$ProfesorBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Profesor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Student.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/VeleucilisteJave.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/glavna/Glavna.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/iznimke/NeispravanIntUnosException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/iznimke/NemoguceOdreditiProsjekStudentaException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/iznimke/PostojiViseNajmladjihStudenataException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/logs/pogreske.log" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/logs/pogreske.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Ispit.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Ispit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/ObrazovnaUstanova.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/ObrazovnaUstanova.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Osoba.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Osoba.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Predmet.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Predmet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Profesor$ProfesorBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Profesor$ProfesorBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Profesor.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Profesor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/VeleucilisteJave.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/VeleucilisteJave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/glavna/Glavna.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/glavna/Glavna.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +142,7 @@
       <workItem from="1695372802391" duration="4378000" />
       <workItem from="1695391920637" duration="10315000" />
       <workItem from="1695407906138" duration="338000" />
+      <workItem from="1695408253360" duration="841000" />
     </task>
     <task id="LOCAL−00001" summary="Added Comments">
       <created>1694414151521</created>
@@ -182,7 +210,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1695407787632</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Added Javadoc and dateTime format input exceptions.">
+      <created>1695408363207</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1695408363207</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +246,8 @@
     <MESSAGE value="Started adding Javadoc." />
     <MESSAGE value="Improved student selection method for odrediStudentaZaRektorovuNagradu(). Added checks for multiple top students with the same birth date and implemented better exception handling and Javadoc." />
     <MESSAGE value="Added Javadoc and dateTime format input exceptions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Javadoc and dateTime format input exceptions." />
+    <MESSAGE value="Started Lab-4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started Lab-4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
