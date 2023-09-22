@@ -41,9 +41,9 @@ public interface Visokoskolska {
     }
 
     /**
-     * Vraća prosječnu ocjenu na ispitima koji su položeni s pozitivnom ocjenom. <p>
-     * Zastarjela i zamijenjena novom metodom.
+     * Vraća prosječnu ocjenu na ispitima koji su položeni s pozitivnom ocjenom.
      *
+     * @deprecated Zastarjela i zamijenjena novom metodom.
      * @param ispitiStudenta Polje ispita kojima je student pristupio
      * @return Prosjek ocjena na ispitima. Ako niti jedan ispit nije položen, vraća se BigDecimal.ZERO
      * @throws ArithmeticException Ako niti jedan ispit nije položen

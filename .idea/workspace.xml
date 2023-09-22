@@ -8,46 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Started Lab-4">
-      <change afterPath="$PROJECT_DIR$/josipovic-4/logs/pogreske.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Diplomski.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Dvorana.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Ispit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Online.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Osoba.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Predmet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Profesor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/files/currentInput" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/files/input" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/iznimke/NeispravanIntUnosException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/iznimke/NemoguceOdreditiProsjekStudentaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/java/hr/java/vjezbe/iznimke/PostojiViseNajmladjihStudenataException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Diplomski.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Dvorana.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Ispit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/ObrazovnaUstanova.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Online.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Osoba.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Predmet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Profesor$ProfesorBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Profesor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Student.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/VeleucilisteJave.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/entitet/Visokoskolska.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/glavna/Glavna.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/iznimke/NeispravanIntUnosException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/iznimke/NemoguceOdreditiProsjekStudentaException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/hr/java/vjezbe/iznimke/PostojiViseNajmladjihStudenataException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/josipovic-4/target/classes/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-4/logs/pogreske.log" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-4/logs/pogreske.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +105,7 @@
       <workItem from="1695391920637" duration="10315000" />
       <workItem from="1695407906138" duration="338000" />
       <workItem from="1695408253360" duration="841000" />
+      <workItem from="1695409107385" duration="235000" />
     </task>
     <task id="LOCAL−00001" summary="Added Comments">
       <created>1694414151521</created>
@@ -216,7 +179,13 @@
       <option name="presentableId" value="LOCAL−00012" />
       <updated>1695408363207</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL−00013" summary="Started Lab-4">
+      <created>1695409190824</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1695409190824</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -12,3 +12,17 @@
 2023-09-22 20:52:36,171 WARN [main] h.j.v.e.FakultetRacunarstva [FakultetRacunarstva.java:78] Student Marko Curić zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“! hr.java.vjezbe.iznimke.NemoguceOdreditiProsjekStudentaException: Polje ispita sadrži ispit sa ocjenom '1'
 2023-09-22 20:52:36,175 ERROR [main] h.j.v.g.Glavna [Glavna.java:330] Unesen neispravan format datuma ispita. java.time.format.DateTimeParseException: Text '12-10-2022.19:00' could not be parsed at index 2
 2023-09-22 20:52:36,177 ERROR [main] h.j.v.g.Glavna [Glavna.java:111] Pronađeno je više najmlađih studenata (PREKID PROGRAMA) hr.java.vjezbe.iznimke.PostojiViseNajmladjihStudenataException: Emil Franković i Danka Županović
+2023-09-22 21:00:10,106 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Aplikacija pokrenuta
+2023-09-22 21:00:10,123 ERROR [main] h.j.v.g.Glavna [Glavna.java:145] Unesen string umjesto broja java.util.InputMismatchException
+2023-09-22 21:00:10,135 ERROR [main] h.j.v.g.Glavna [Glavna.java:265] Unesen neispravan format datuma rođenja. java.time.format.DateTimeParseException: Text '12.11.1999' could not be parsed at index 10
+2023-09-22 21:00:10,139 WARN [main] h.j.v.g.Glavna [Glavna.java:93] Student Marko Curić zbog negativne ocjene na jednom od ispita ne može polagati završni rad! hr.java.vjezbe.iznimke.NemoguceOdreditiProsjekStudentaException: Polje ispita sadrži ispit sa ocjenom '1'
+2023-09-22 21:00:10,141 WARN [main] h.j.v.e.FakultetRacunarstva [FakultetRacunarstva.java:78] Student Marko Curić zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“! hr.java.vjezbe.iznimke.NemoguceOdreditiProsjekStudentaException: Polje ispita sadrži ispit sa ocjenom '1'
+2023-09-22 21:00:10,144 ERROR [main] h.j.v.g.Glavna [Glavna.java:330] Unesen neispravan format datuma ispita. java.time.format.DateTimeParseException: Text '12-10-2022.19:00' could not be parsed at index 2
+2023-09-22 21:00:10,146 ERROR [main] h.j.v.g.Glavna [Glavna.java:111] Pronađeno je više najmlađih studenata (PREKID PROGRAMA) hr.java.vjezbe.iznimke.PostojiViseNajmladjihStudenataException: Emil Franković i Danka Županović
+2023-09-22 21:01:52,670 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Aplikacija pokrenuta
+2023-09-22 21:01:52,684 ERROR [main] h.j.v.g.Glavna [Glavna.java:145] Unesen string umjesto broja java.util.InputMismatchException
+2023-09-22 21:01:52,695 ERROR [main] h.j.v.g.Glavna [Glavna.java:265] Unesen neispravan format datuma rođenja. java.time.format.DateTimeParseException: Text '12.11.1999' could not be parsed at index 10
+2023-09-22 21:01:52,699 WARN [main] h.j.v.g.Glavna [Glavna.java:93] Student Marko Curić zbog negativne ocjene na jednom od ispita ne može polagati završni rad! hr.java.vjezbe.iznimke.NemoguceOdreditiProsjekStudentaException: Polje ispita sadrži ispit sa ocjenom '1'
+2023-09-22 21:01:52,701 WARN [main] h.j.v.e.FakultetRacunarstva [FakultetRacunarstva.java:78] Student Marko Curić zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“! hr.java.vjezbe.iznimke.NemoguceOdreditiProsjekStudentaException: Polje ispita sadrži ispit sa ocjenom '1'
+2023-09-22 21:01:52,704 ERROR [main] h.j.v.g.Glavna [Glavna.java:330] Unesen neispravan format datuma ispita. java.time.format.DateTimeParseException: Text '12-10-2022.19:00' could not be parsed at index 2
+2023-09-22 21:01:52,706 ERROR [main] h.j.v.g.Glavna [Glavna.java:111] Pronađeno je više najmlađih studenata (PREKID PROGRAMA) hr.java.vjezbe.iznimke.PostojiViseNajmladjihStudenataException: Emil Franković i Danka Županović
