@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.*;
 
 /**
  * Visokoškolska obrazovna ustanova koja nudi diplomski studij.
@@ -49,28 +50,34 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
 
 
     /**
-     * Vraća studenta s najvišim prosjekom. Ako takvih studenata ima više, prednost ima najmlađi. (DORADITI)
+     * Određuje studenta s najvišim prosjekom. Ako postoji više studenata s najvišim prosjekom,
+     * odabire se najmlađi.
+     * Ako postoji više od jednog studenta s istim najvišim prosjekom i istim datumom rođenja,
+     * ti se studenti dodaju u mapu.
      *
-     * @return
-     * @throws PostojiViseNajmladjihStudenataException
+     * Nakon što su obrađeni svi studenti,
+     * provjerava se postoji li u mapi više od jednog studenta s istim datumom rođenja kao najbolji student.
+     * Ako postoji, baca se iznimka PostojiViseNajmladjihStudenataException.
+     *
+     * @return Student koji osvaja rektorovu nagradu
+     * @throws PostojiViseNajmladjihStudenataException ako postoji više od jednog najboljeg
+     * studenta s istim datumom rođenja
      */
     @Override
     public Student odrediStudentaZaRektorovuNagradu() throws PostojiViseNajmladjihStudenataException {
         BigDecimal maxProsjek = new BigDecimal(0);
         Student bestStudent = getStudenti()[0];
 
+        LinkedHashMap<Student, BigDecimal> najboljiIsteStarosti = new LinkedHashMap<>();
         for (Student s : getStudenti()) {
             Ispit[] studentoviIspiti = filtrirajIspitePoStudentu(getIspiti(), s);
-
             BigDecimal prosjek;
             try {
                 prosjek = odrediProsjekOcjenaNaIspitima(studentoviIspiti);
             } catch (NemoguceOdreditiProsjekStudentaException e) {
                 logger.warn("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“! " + e);
-                //System.out.println("Student " + s.getImePrezime() + " zbog negativne ocjene na jednom od ispita ima prosjek „nedovoljan (1)“!");
                 prosjek = BigDecimal.ONE;
             }
-
 
             if (prosjek.compareTo(maxProsjek) > 0) {
                 maxProsjek = prosjek;
@@ -81,7 +88,28 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
                 bestStudent = s;
             }
             else if (prosjek.compareTo(maxProsjek) == 0 && s.getDatumRodjenja().isEqual(bestStudent.getDatumRodjenja())) {
-                throw new PostojiViseNajmladjihStudenataException(bestStudent.getImePrezime() + " i " + s.getImePrezime());
+                najboljiIsteStarosti.put(bestStudent, maxProsjek);
+                najboljiIsteStarosti.put(s, prosjek);
+
+                maxProsjek = prosjek;
+                bestStudent = s;
+            }
+        }
+        if (najboljiIsteStarosti.containsKey(bestStudent)){
+            String message = "";
+            BigDecimal targetValue = maxProsjek;
+            int counter = 0;
+            for (Map.Entry<Student, BigDecimal> entry : najboljiIsteStarosti.entrySet()) {
+                if (entry.getValue().equals(targetValue)){
+                    if (!message.isEmpty()) {
+                        message += " i ";
+                    }
+                    message += entry.getKey().getImePrezime();
+                    counter++;
+                }
+            }
+            if(counter >= 2){
+                throw new PostojiViseNajmladjihStudenataException(message);
             }
         }
         return bestStudent;

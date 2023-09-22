@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Configured input and logger messages.">
+    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Started adding Javadoc.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Diplomski.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Diplomski.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Dvorana.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Dvorana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/logs/pogreske.log" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/logs/pogreske.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Ispit.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Ispit.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +96,8 @@
       <workItem from="1695101765354" duration="12680000" />
       <workItem from="1695121072676" duration="157000" />
       <workItem from="1695203873061" duration="3517000" />
-      <workItem from="1695278793349" duration="23547000" />
+      <workItem from="1695278793349" duration="23625000" />
+      <workItem from="1695372802391" duration="4240000" />
     </task>
     <task id="LOCAL−00001" summary="Added Comments">
       <created>1694414151521</created>
@@ -148,7 +147,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1695324972136</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="Started adding Javadoc.">
+      <created>1695328284679</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1695328284679</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +180,8 @@
     <MESSAGE value="Cleaning up code." />
     <MESSAGE value="Exception handling and error logging." />
     <MESSAGE value="Configured input and logger messages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Configured input and logger messages." />
+    <MESSAGE value="Started adding Javadoc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started adding Javadoc." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
