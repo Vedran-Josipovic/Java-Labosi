@@ -1,8 +1,19 @@
 package hr.java.vjezbe.entitet;
 
+/**
+ * Predstavlja profesora na obrazovnoj ustanovi.
+ * <p>
+ * Sadrži unutarnju klasu {@code ProfesorBuilder} za stvaranje objekata klase {@code Profesor} koristeći Builder oblikovni uzorak.
+ */
 public class Profesor extends Osoba {
     private String sifra, titula;
 
+    /**
+     * @param sifra šifra profesora
+     * @param ime ime profesora
+     * @param prezime prezime profesora
+     * @param titula titula profesora
+     */
     private Profesor(String sifra, String ime, String prezime, String titula) {
         super(ime, prezime);
         this.sifra = sifra;
@@ -22,6 +33,11 @@ public class Profesor extends Osoba {
         this.titula = titula;
     }
 
+    /**
+     * Predstavlja Builder za klasu {@code Profesor}.
+     * <p>
+     * Omogućuje stvaranje objekata klase {@code Profesor} koristeći Builder oblikovni uzorak.
+     */
     public static class ProfesorBuilder {
         private String sifra, ime, prezime, titula;
 
@@ -42,11 +58,18 @@ public class Profesor extends Osoba {
             return this;
         }
 
+        /**
+         * Stvara novi objekt klase {@code Profesor} s postavljenim vrijednostima.
+         * @return novi objekt klase {@code Profesor}
+         */
         public Profesor build() {
             return new Profesor(sifra, ime, prezime, titula);
         }
     }
 
+    /**
+     * @return string reprezentacija objekta klase {@code Profesor}
+     */
     @Override
     public String toString() {
         return "Profesor{ " +

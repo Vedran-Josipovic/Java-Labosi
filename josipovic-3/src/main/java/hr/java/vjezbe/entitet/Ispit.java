@@ -1,6 +1,10 @@
 package hr.java.vjezbe.entitet;
 import java.time.LocalDateTime;
 
+
+/**
+ * Predstavlja ispit koji student polaže na obrazovnoj ustanovi.
+ */
 public final class Ispit implements Online {
     private Predmet predmet;
     private Student student;
@@ -9,6 +13,14 @@ public final class Ispit implements Online {
     private Dvorana dvorana;
     private String nazivOnlineSoftvera = null;
 
+
+    /**
+     * @param predmet predmet koji student polaže
+     * @param student student koji polaže ispit
+     * @param ocjena ocjena koju je student dobio na ispitu
+     * @param datumIVrijeme datum i vrijeme kada se ispit održava
+     * @param dvorana dvorana u kojoj se ispit održava
+     */
     public Ispit(Predmet predmet, Student student, Integer ocjena, LocalDateTime datumIVrijeme, Dvorana dvorana) {
         this.predmet = predmet;
         this.student = student;
@@ -17,6 +29,12 @@ public final class Ispit implements Online {
         this.dvorana = dvorana;
     }
 
+    /**
+     * @param predmet predmet koji student polaže
+     * @param student student koji polaže ispit
+     * @param ocjena ocjena koju je student dobio na ispitu
+     * @param datumIVrijeme datum i vrijeme kada se ispit održava
+     */
     public Ispit(Predmet predmet, Student student, Integer ocjena, LocalDateTime datumIVrijeme) {
         this.predmet = predmet;
         this.student = student;
@@ -54,14 +72,26 @@ public final class Ispit implements Online {
     public void setDvorana(Dvorana dvorana) {
         this.dvorana = dvorana;
     }
+
+
+    /**
+     * @param nazivOnlineSoftvera naziv online softvera koji se koristi za ispit
+     */
     @Override
     public void setNazivOnlineSoftvera(String nazivOnlineSoftvera) {
         this.nazivOnlineSoftvera = nazivOnlineSoftvera;
     }
+
+    /**
+     * @return naziv online softvera koji se koristi za ispit
+     */
     public String getNazivOnlineSoftvera() {
         return nazivOnlineSoftvera;
     }
 
+    /**
+     * @return string reprezentacija objekta klase {@code Ispit}
+     */
     @Override
     public String toString() {
         return "Ispit{" +

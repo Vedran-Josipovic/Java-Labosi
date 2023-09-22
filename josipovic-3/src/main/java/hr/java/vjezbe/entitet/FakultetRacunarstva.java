@@ -15,10 +15,10 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
     private static final Logger logger = LoggerFactory.getLogger(FakultetRacunarstva.class);
 
     /**
-     * @param nazivUstanove Ime fakulteta
-     * @param predmeti Predmeti koje fakultet nudi
-     * @param studenti Studenti koji pohađaju fakultet
-     * @param ispiti Ispiti koji su se održali na fakultetu
+     * @param nazivUstanove ime fakulteta
+     * @param predmeti predmeti koje fakultet nudi
+     * @param studenti studenti koji pohađaju fakultet
+     * @param ispiti ispiti koji su se održali na fakultetu
      */
     public FakultetRacunarstva(String nazivUstanove, Predmet[] predmeti, Student[] studenti, Ispit[] ispiti) {
         super(nazivUstanove, predmeti, studenti, ispiti);
@@ -96,27 +96,35 @@ public class FakultetRacunarstva extends ObrazovnaUstanova implements Diplomski 
             }
         }
         if (najboljiIsteStarosti.containsKey(bestStudent)){
-            String message = "";
+            String poruka = "";
             BigDecimal targetValue = maxProsjek;
-            int counter = 0;
+            int brojac = 0;
             for (Map.Entry<Student, BigDecimal> entry : najboljiIsteStarosti.entrySet()) {
                 if (entry.getValue().equals(targetValue)){
-                    if (!message.isEmpty()) {
-                        message += " i ";
+                    if (!poruka.isEmpty()) {
+                        poruka += " i ";
                     }
-                    message += entry.getKey().getImePrezime();
-                    counter++;
+                    poruka += entry.getKey().getImePrezime();
+                    brojac++;
                 }
             }
-            if(counter >= 2){
-                throw new PostojiViseNajmladjihStudenataException(message);
+            if(brojac >= 2){
+                throw new PostojiViseNajmladjihStudenataException(poruka);
             }
         }
         return bestStudent;
     }
 
+
     /**
-     * konačna ocjena = (3 * prosjek ocjena studenta + ocjena diplomskog rada + ocjena obrane diplomskog rada) / 5
+     * Izračunava konačnu ocjenu studija za studenta na temelju prosjeka ocjena na ispitima,
+     * ocjene diplomskog rada i ocjene obrane diplomskog rada.
+     *
+     * @param studentoviIspiti Polje ispita kojima je student pristupio
+     * @param diplomskiPismeni Ocjena studenta za pismeni dio diplomskog rada
+     * @param diplomskiObrana Ocjena studenta za obranu diplomskog rada
+     * @return konačna ocjena = (3 * prosjek ocjena studenta + ocjena diplomskog rada + ocjena obrane diplomskog rada) / 5.
+     * Ako je nemoguće odrediti prosjek ocjena na ispitima (npr. ako student ima negativnu ocjenu na jednom od ispita), vraća se ocjena 1
      */
     @Override
     public BigDecimal izracunajKonacnuOcjenuStudijaZaStudenta(Ispit[] studentoviIspiti, Integer diplomskiPismeni, Integer diplomskiObrana) {

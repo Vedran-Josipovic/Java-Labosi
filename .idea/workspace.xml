@@ -7,10 +7,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Started adding Javadoc.">
+    <list default="true" id="de39eb8e-8cf5-4d1e-926a-538f385394e7" name="Changes" comment="Improved student selection method for odrediStudentaZaRektorovuNagradu(). Added checks for multiple top students with the same birth date and implemented better exception handling and Javadoc.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/logs/pogreske.log" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/logs/pogreske.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Dvorana.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Dvorana.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/FakultetRacunarstva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Ispit.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Ispit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/ObrazovnaUstanova.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Online.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Online.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Osoba.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Osoba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Predmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Predmet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/VeleucilisteJave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/entitet/Visokoskolska.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/files/currentInput" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/files/currentInput" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/glavna/Glavna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/NeispravanIntUnosException.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/NeispravanIntUnosException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/NemoguceOdreditiProsjekStudentaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/NemoguceOdreditiProsjekStudentaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/PostojiViseNajmladjihStudenataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/src/main/java/hr/java/vjezbe/iznimke/PostojiViseNajmladjihStudenataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Dvorana.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/Dvorana.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" beforeDir="false" afterPath="$PROJECT_DIR$/josipovic-3/target/classes/hr/java/vjezbe/entitet/FakultetRacunarstva.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +114,8 @@
       <workItem from="1695121072676" duration="157000" />
       <workItem from="1695203873061" duration="3517000" />
       <workItem from="1695278793349" duration="23625000" />
-      <workItem from="1695372802391" duration="4240000" />
+      <workItem from="1695372802391" duration="4378000" />
+      <workItem from="1695391920637" duration="10165000" />
     </task>
     <task id="LOCAL−00001" summary="Added Comments">
       <created>1694414151521</created>
@@ -153,7 +171,13 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1695328284679</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="Improved student selection method for odrediStudentaZaRektorovuNagradu(). Added checks for multiple top students with the same birth date and implemented better exception handling and Javadoc.">
+      <created>1695378545344</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1695378545344</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +205,8 @@
     <MESSAGE value="Exception handling and error logging." />
     <MESSAGE value="Configured input and logger messages." />
     <MESSAGE value="Started adding Javadoc." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started adding Javadoc." />
+    <MESSAGE value="Improved student selection method for odrediStudentaZaRektorovuNagradu(). Added checks for multiple top students with the same birth date and implemented better exception handling and Javadoc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved student selection method for odrediStudentaZaRektorovuNagradu(). Added checks for multiple top students with the same birth date and implemented better exception handling and Javadoc." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -12,19 +12,34 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//Labos - 3
+/**
+ * Sadrži main metodu i pomoćne metode.
+ */
 public class Glavna {
     private static final Logger logger = LoggerFactory.getLogger(Glavna.class);
     private static final Integer brProf = 2, brPred = 2, brStud = 2, brIspit = 2, akadGod = 2022;
+
+    /**
+     * Glavna metoda koja pokreće aplikaciju. <p>
+     * Učitava podatke o ispitima, studentima, profesorima i predmetima iz datoteke.
+     * Izračunava prosječne ocjene, određuje najuspješnijeg studenta i dodjeljuje Rektorovu nagradu,
+     * te zapisuje iste na konzolu.
+     *
+     * @param args Argumenti naredbenog retka (ne koriste se)
+     * @throws FileNotFoundException Ako datoteka s podacima ne može biti pronađena
+     */
     public static void main(String[] args) throws FileNotFoundException {
         logger.info("Aplikacija pokrenuta");
 
         //Scanner scanner = new Scanner(System.in);
         File file = new File("josipovic-3/src/main/java/hr/java/vjezbe/files/currentInput");
+
+        //Provjeriti je li scanner null radi nullpointerexceptiona, te dodaj handlanje FileNotFoundException
         Scanner scanner = new Scanner(file);
 
         Profesor[] profesori;
@@ -107,6 +122,16 @@ public class Glavna {
         logger.info("Aplikacija završila s radom");
     }
 
+    /**
+     * Unosi cijeli broj s konzole uz obradu iznimki.
+     * Ako je unesena vrijednost izvan dopuštenog raspona ili nije cijeli broj, traži se ponovni unos.
+     *
+     * @param scanner Scanner objekt za unos podataka
+     * @param poruka Poruka koja se ispisuje prije unosa
+     * @param minVrijednost Minimalna dopuštena vrijednost (Uključujući)
+     * @param maxVrijednost Maksimalna dopuštena vrijednost (Uključujući)
+     * @return Uneseni cijeli broj
+     */
     private static int intUnosIznimkeHandler(Scanner scanner, String poruka, int minVrijednost, int maxVrijednost){
         int uneseniBroj = 0;
         boolean badFormat;
@@ -133,12 +158,27 @@ public class Glavna {
         return uneseniBroj;
     }
 
+
+    /**
+     * Provjerava je li uneseni broj unutar zadanih granica.
+     *
+     * @param uneseniBroj Broj koji se provjerava
+     * @param minVrijednost Minimalna dopuštena vrijednost (Uključujući)
+     * @param maxVrijednost Maksimalna dopuštena vrijednost (Uključujući)
+     * @throws NeispravanIntUnosException Ako uneseni broj nije unutar zadanih granica
+     */
     private static void isBrojInRange(int uneseniBroj, int minVrijednost, int maxVrijednost) throws NeispravanIntUnosException {
         if (uneseniBroj < minVrijednost || uneseniBroj > maxVrijednost){
             throw new NeispravanIntUnosException("Unesen broj van dopuštenih parametara [" + minVrijednost + "," + maxVrijednost + "]." + " Unos: " + uneseniBroj);
         }
     }
 
+    /**
+     * Unosi podatke o profesorima.
+     *
+     * @param scanner Scanner objekt za unos podataka
+     * @return Polje objekata klase Profesor
+     */
     static Profesor[] unosProfesora(Scanner scanner) {
         Profesor[] profesori = new Profesor[brProf];
         for (int i = 0; i < profesori.length; i++) {
@@ -161,6 +201,13 @@ public class Glavna {
         return profesori;
     }
 
+    /**
+     * Unosi podatke o predmetima.
+     *
+     * @param scanner Scanner objekt za unos podataka
+     * @param profesori Polje objekata klase {@code Profesor} iz kojeg se odabrani profesor dodaje u objekt klase {@code Predmet}.
+     * @return Polje objekata klase Predmet
+     */
     static Predmet[] unosPredmeta(Scanner scanner, Profesor[] profesori) {
         Predmet[] predmeti = new Predmet[brPred];
         for (int i = 0; i < predmeti.length; i++) {
@@ -185,6 +232,14 @@ public class Glavna {
         return predmeti;
     }
 
+    /**
+     * Unosi podatke o studentima. Ako je unesen neispravan format datuma,
+     * u logger će se zapisati iznimka {@code DateTimeParseException}, a
+     * unos će se ponavljati dok se ne unese ispravan format.
+     *
+     * @param scanner Scanner objekt za unos podataka
+     * @return Polje objekata klase {@code Student}
+     */
     static Student[] unosStudenata(Scanner scanner) {
         Student[] studenti = new Student[brStud];
         for (int i = 0; i < studenti.length; i++) {
@@ -196,11 +251,21 @@ public class Glavna {
             System.out.print("Unesite prezime studenta: ");
             String prezime = scanner.nextLine();
 
-            System.out.print("Unesite datum rođenja studenta " + prezime + " " + ime + " u formatu (dd.MM.yyyy.): ");
-
-            String stringDatumRodjenja = scanner.nextLine();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy.");
-            LocalDate datumRodjenja = LocalDate.parse(stringDatumRodjenja, formatter);
+            LocalDate datumRodjenja = null;
+            boolean ispravanFormat;
+            do {
+                System.out.print("Unesite datum rođenja studenta " + prezime + " " + ime + " u formatu (dd.MM.yyyy.): ");
+                try {
+                    String stringDatumRodjenja = scanner.nextLine();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy.");
+                    datumRodjenja = LocalDate.parse(stringDatumRodjenja, formatter);
+                    ispravanFormat = true;
+                } catch (DateTimeParseException e) {
+                    System.out.println("Neispravan format datuma. Molimo unesite datum u formatu dd.MM.yyyy.");
+                    logger.error("Unesen neispravan format datuma rođenja. " + e);
+                    ispravanFormat = false;
+                }
+            } while (!ispravanFormat);
 
             System.out.print("Unesite JMBAG studenta: ");
             String jmbag = scanner.nextLine();
@@ -210,6 +275,19 @@ public class Glavna {
         return studenti;
     }
 
+    /**
+     * Unosi podatke o ispitima. <p>
+     * Ako je unesen neispravan format datuma,
+     * u logger će se zapisati iznimka {@code DateTimeParseException}, a
+     * unos će se ponavljati dok se ne unese ispravan format.
+     * Objekte klase {@code Student} koji su pristupili ispitima iz određenih
+     * predmeta dodaje se u polje studenata za te predmete.
+     *
+     * @param scanner Scanner objekt za unos podataka
+     * @param predmeti Polje objekata klase {@code Predmet} iz kojeg se odabrani predmet dodaje u objekt klase {@code Ispit}
+     * @param studenti Polje objekata klase {@code Student} iz kojeg se odabrani student dodaje u objekt klase {@code Ispit}
+     * @return Polje objekata klase Ispit
+     */
     static Ispit[] unosIspita(Scanner scanner, Predmet[] predmeti, Student[] studenti) {
         Ispit[] ispiti = new Ispit[brIspit];
 
@@ -238,22 +316,35 @@ public class Glavna {
             int odabirStudenta = intUnosIznimkeHandler(scanner, "Odabir >> ", 1, studenti.length);
             Integer ocjena = intUnosIznimkeHandler(scanner, "Unesite ocjenu na ispitu (1-5): ", 1, 5);
 
-            System.out.print("Unesite datum i vrijeme ispita u formatu (dd.MM.yyyy.THH:mm): ");
-            String stringDatumIVrijeme = scanner.nextLine();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy.'T'HH:mm");
-            LocalDateTime datumIVrijeme = LocalDateTime.parse(stringDatumIVrijeme, formatter);
+            LocalDateTime datumIVrijeme = null;
+            boolean ispravanFormat;
+            do {
+                System.out.print("Unesite datum i vrijeme ispita u formatu (dd.MM.yyyy.THH:mm): ");
+                try {
+                    String stringDatumIVrijeme = scanner.nextLine();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy.'T'HH:mm");
+                    datumIVrijeme = LocalDateTime.parse(stringDatumIVrijeme, formatter);
+                    ispravanFormat = true;
+                } catch (DateTimeParseException e) {
+                    System.out.println("Neispravan format datuma. Molimo unesite datum u formatu dd.MM.yyyy.THH:mm");
+                    logger.error("Unesen neispravan format datuma ispita. " + e);
+                    ispravanFormat = false;
+                }
+            } while (!ispravanFormat);
 
             //ispiti[i] = new Ispit(predmeti[odabirPredmeta - 1], studenti[odabirStudenta - 1], ocjena, datumIVrijeme, dvorana);
             ispiti[i] = new Ispit(predmeti[odabirPredmeta - 1], studenti[odabirStudenta - 1], ocjena, datumIVrijeme);
 
-            //Objekte klase „Student“ koji su pristupili ispitima iz određeniH predmeta treba dodati u polje studenata za taj određeni predmet
             predmeti[odabirPredmeta - 1].addStudent(studenti[odabirStudenta - 1]);
         }
         return ispiti;
     }
 
+
     /**
      * Generic metoda koja printa sve elemente u polju.
+     *
+     * @param items Polje elemenata tipa T. (T treba sadržavati metodu toString).
      */
     public static <T> void printPolje(T[] items) {
         System.out.println("\n\n");
@@ -261,9 +352,11 @@ public class Glavna {
         System.out.println("\n\n");
     }
 
+
     /**
-     * @param ispiti
-     * Printa ime i prezime studenata koji imaju 5 iz ispita.
+     * Ispisuje imena i prezimena studenata koji su ostvarili ocjenu 5 iz ispita.
+     *
+     * @param ispiti Polje objekata klase {@code Ispit} iz kojeg dohvaćamo ocjene.
      */
     static void printOdlikasi(Ispit[] ispiti){
         for (Ispit i : ispiti){

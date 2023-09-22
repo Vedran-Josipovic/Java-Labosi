@@ -1,5 +1,8 @@
 package hr.java.vjezbe.iznimke;
 
+/**
+ * Baca se kada je unesen broj van dopuštenih parametara.
+ */
 public class NeispravanIntUnosException extends RuntimeException{
     public NeispravanIntUnosException() {
     }
